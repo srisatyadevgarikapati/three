@@ -53,7 +53,7 @@ type message struct{
 
 func callOneAndTwo() string{
 
-	url := "http://one-myproject.192.168.64.2.nip.io "
+	url := "http://one-myproject.192.168.64.2.nip.io"
 	req, _ := http.NewRequest("GET", url, nil)
 	res, _ := http.DefaultClient.Do(req)
 	defer res.Body.Close()
@@ -61,7 +61,7 @@ func callOneAndTwo() string{
 
 
 
-	url2 := "http://two-myproject.192.168.64.2.nip.io "
+	url2 := "http://two-myproject.192.168.64.2.nip.io"
 	req2, _ := http.NewRequest("GET", url2, nil)
 	res2, _ := http.DefaultClient.Do(req2)
 	defer res.Body.Close()
