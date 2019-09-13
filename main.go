@@ -71,7 +71,21 @@ func callOneAndTwo() string{
 
 }
 
+func createFile() {
+    // check if file exists
+    var _, err = os.Stat(path)
 
+    // create file if not exists
+    if os.IsNotExist(err) {
+        var file, err = os.Create(path)
+        if isError(err) {
+            return
+        }
+        defer file.Close()
+    }
+
+    fmt.Println("File Created Successfully", path)
+}
 func homePage(writer http.ResponseWriter, request *http.Request) {
 	//response := message{Message:"From Three"}
 	//data,err := json.Marshal(response)
