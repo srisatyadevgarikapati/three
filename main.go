@@ -95,5 +95,6 @@ func homePage(writer http.ResponseWriter, request *http.Request) {
 	//}
 
 	//fmt.Fprint(writer,string(data))
+	createFile()
 	fmt.Fprint(writer, callOneAndTwo())
 }
