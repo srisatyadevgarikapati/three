@@ -1,5 +1,8 @@
 FROM golang:1.12
 
+RUN addgroup group1
+RUN adduser --system otto --uid 1000 --ingroup group1
+
 RUN mkdir -p $GOPATH/src/three
 WORKDIR $GOPATH/src/three
 
